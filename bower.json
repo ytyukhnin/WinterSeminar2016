@@ -1,0 +1,23 @@
+{
+  "name": "WinterSeminar2016",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Yuriy Tyukhnin <ytyukhnin@smartadserver.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.22",
+    "react": "~0.14.7"
+  }
+}

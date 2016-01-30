@@ -1,0 +1,5 @@
+node_modules
+tools
+wwwroot/lib
+wwwroot/js
+project.lock.json
