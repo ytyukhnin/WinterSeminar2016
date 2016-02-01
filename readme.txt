@@ -9,6 +9,8 @@ npm -g install del
 tsd install react --save
 tsd install react-dom --save
 tsd install require --save
+tsd install lodash --save
+tsd install jquery --save
 
 
 dnx web
