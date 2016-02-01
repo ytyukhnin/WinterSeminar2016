@@ -12,10 +12,12 @@ tsd install react-dom --save
 tsd install require --save
 tsd install lodash --save
 tsd install jquery --save
+tsd install react-bootstrap --save
 
 bower install jquery --save
 bower install lodash --save
 bower install react --save
 bower install requirejs --save
+bower install react-bootstrap --save
 
 dnx web

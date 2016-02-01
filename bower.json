@@ -20,6 +20,7 @@
     "requirejs": "~2.1.22",
     "react": "~0.14.7",
     "jquery": "~2.2.0",
-    "lodash": "~4.1.0"
+    "lodash": "~4.1.0",
+    "react-bootstrap": "^0.28.2"
   }
 }

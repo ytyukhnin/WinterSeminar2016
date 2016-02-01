@@ -6,7 +6,8 @@ requirejs.config({
         "react": "../lib/react/react",
         "react-dom": "../lib/react/react-dom",
         "jquery": "../lib/jquery/dist/jquery", // loaded with Bootstrap
-        "lodash": "../lib/lodash/dist/lodash"
+        "lodash": "../lib/lodash/dist/lodash",
+        "react-bootstrap": "../lib/react-bootstrap/react-bootstrap"
     }
 });
 

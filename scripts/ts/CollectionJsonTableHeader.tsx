@@ -10,11 +10,9 @@ export class CollectionJsonTableHeader extends React.Component<ICollectionJsonIt
     
     constructor(props:ICollectionJsonItem) {
         super(props);
-        //TODO: init fields?
     }
     
-    
-    public render() {
+    render() {
         var headerCells = _(this.props.data)
           .map((datum, idx) => <th key={idx}>{datum.prompt}</th>)
           .value();

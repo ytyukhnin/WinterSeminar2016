@@ -10,11 +10,9 @@ export class CollectionJsonTable extends React.Component<ICollectionJson, any> {
     
     constructor(props:ICollectionJson) {
         super(props);
-        //TODO: init fields?
-        //data.collection
     }
     
-    public render() {
+    render() {
             if (!this.props || !this.props.collection) {
                 return <div></div>;
             }
@@ -29,7 +27,7 @@ export class CollectionJsonTable extends React.Component<ICollectionJson, any> {
                     data = {item.data}
                     href = {item.href}
                     links = {item.links}
-                    //key={idx}
+                    key={idx}
             />).value();
 
             return (

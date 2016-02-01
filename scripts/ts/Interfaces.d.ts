@@ -20,7 +20,8 @@ interface ICollectionJsonCollection {
 interface ICollectionJsonItem {
     href:string,
     data:ICollectionJsonData[],
-    links:string[]
+    links:string[],
+    key?:number
 }
 
 

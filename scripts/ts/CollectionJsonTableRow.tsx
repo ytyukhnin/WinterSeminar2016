@@ -10,10 +10,9 @@ export class CollectionJsonTableRow extends React.Component<ICollectionJsonItem,
     
     constructor(props:ICollectionJsonItem) {
         super(props);
-        //TODO: init fields?
     }
     
-    public render() {
+    render() {
         var dataCells = _(this.props.data)
             .map((datum, idx) => <td key={idx}>{datum.value}</td>)
             .value();

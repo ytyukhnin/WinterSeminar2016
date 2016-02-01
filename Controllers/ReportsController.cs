@@ -1,41 +1,20 @@
 using Microsoft.AspNet.Mvc;
 using CollectionJson;
-using CollectionJson.Client;
 using System.Linq;
 using System.Collections.Generic;
-using System.Net.Http;
 
-namespace Web {
-    
-    public struct Deal 
-    {
-        public string Name;
-        public bool State;
-        public int Auctions;
-        public int Impressions;
-        public float Revenue;
-        public float AvgClearingCpm;
-
-        public Deal(string name, bool state, int auctions, int impressions, float revenue, float avgClearingCpm) {
-            Name = name;
-            State = state;
-            Auctions = auctions;
-            Impressions = impressions;
-            Revenue = revenue;
-            AvgClearingCpm = avgClearingCpm;
-        }
-
-    }
-
+namespace Web
+{
     [Route("api/reports")]
     public class ReportsController : Controller 
     {
         
         [Route("deals")]
         [HttpGet]
-        public ReadDocument Deals() {
-            
-            var deals = Enumerable.Range(0, 10)
+        public ReadDocument Deals() 
+        {
+            var deals = Enumerable
+                            .Range(0, 10)
                             .Select( idx => new Deal("Deal " + idx, true, idx, idx, idx * 1.4f, idx * 5.6f));
 
             var doc = new ReadDocument
