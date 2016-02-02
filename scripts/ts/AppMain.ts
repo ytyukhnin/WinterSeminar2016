@@ -1,7 +1,6 @@
 /// <reference path="../../tools/typings/requirejs/require.d.ts" />
 
 requirejs.config({
-    //baseUrl: 'wwwroot',
     paths : {
         "react": "../lib/react/react",
         "react-dom": "../lib/react/react-dom",
@@ -13,3 +12,5 @@ requirejs.config({
 });
 
 require(["./App"]);
+
+// AMD => http://requirejs.org/docs/whyamd.html#amd

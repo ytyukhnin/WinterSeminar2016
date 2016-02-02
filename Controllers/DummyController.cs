@@ -5,6 +5,6 @@ public class DummyController
 {
     public string Get() 
     {
-        return "I'm dummy";    
+        return "I'm so dummy";    
     }    
 }

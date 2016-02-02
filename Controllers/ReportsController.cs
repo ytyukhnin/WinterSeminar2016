@@ -21,7 +21,7 @@ namespace Web
                             .Select(idx => 
                                 new Deal("Deal " + idx, true, idx * 1000, idx * 100, idx * 1.4f, idx * 5.6f));
 
-            // http://amundsen.com/media-types/collection/format/
+            // Collection+JSON => http://amundsen.com/media-types/collection/format/
             var doc = new ReadDocument
             {
                 Collection =

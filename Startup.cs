@@ -16,12 +16,10 @@ namespace Web
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
-            app.UseIISPlatformHandler();
-           
             app.UseDeveloperExceptionPage();
-
             app.UseMvcWithDefaultRoute();
 
+            //app.UseIISPlatformHandler();
             //app.UseWelcomePage();
             //app.UseRuntimeInfoPage("/info");
             

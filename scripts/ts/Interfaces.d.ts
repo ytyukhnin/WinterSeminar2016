@@ -1,7 +1,9 @@
+// Application configuration interface
 interface IAppConfig {
-    href:string
+    dealsHref:string
 }
 
+// Collection+JSON interfaces
 interface ICollectionJson {
     collection:ICollectionJsonCollection
 }
@@ -11,7 +13,7 @@ interface ICollectionJsonCollection {
     href:string,
     links:ICollectionJsonLink[],
     items:ICollectionJsonItem[],
-    queries:any[],
+    queries:any[], // ICollectionJsonQuery[]
     template:any,
     error:any
 }

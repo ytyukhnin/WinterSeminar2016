@@ -5,13 +5,15 @@
 /// <reference path="../../tools/typings/lodash/lodash.d.ts" />
 /// <reference path="../ts/Interfaces.d.ts" />
 
+// DefinitelyTyped => https://github.com/borisyankov/DefinitelyTyped
+//                 => https://github.com/DefinitelyTyped/tsd
+
 import * as _ from 'lodash';
 import * as $ from 'jquery';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Pager, PageItem } from 'react-bootstrap';
 import { CollectionJsonTable } from "./CollectionJsonTable";
-
 
 class App extends React.Component<IAppConfig, any> {
     
@@ -36,7 +38,7 @@ class App extends React.Component<IAppConfig, any> {
     }
 
     componentWillMount() {
-        $.getJSON(this.props.href)
+        $.getJSON(this.props.dealsHref)
             .done(resp => this.setState({ deals: resp }));
     }
 
@@ -77,7 +79,7 @@ class App extends React.Component<IAppConfig, any> {
 
 ReactDOM.render(
     <App 
-        href="api/reports/deals"
+        dealsHref="api/reports/deals"
     />,
-    document.getElementById('datatable')
+    document.getElementById('dealstable')
 );
