@@ -9,8 +9,6 @@ var gulp = require('gulp'),
     del = require('del'),
     Config = require('./gulpfile.config'),
     tsProject = tsc.createProject('tsconfig.json');
-//    browserSync = require('browser-sync'),
-//    superstatic = require( 'superstatic' );
 
 var config = new Config();
 
@@ -67,27 +65,5 @@ gulp.task('clean-ts', function (cb) {
   // delete the files
   del(typeScriptGenFiles, cb);
 });
-
-// gulp.task('watch', function() {
-//     gulp.watch([config.allTypeScript], ['ts-lint', 'compile-ts']);
-// });
-
-// gulp.task('serve', ['compile-ts', 'watch'], function() {
-//   process.stdout.write('Starting browserSync and superstatic...\n');
-//   browserSync({
-//     port: 3000,
-//     files: ['index.html', '**/*.js'],
-//     injectChanges: true,
-//     logFileChanges: false,
-//     logLevel: 'silent',
-//     logPrefix: 'angularin20typescript',
-//     notify: true,
-//     reloadDelay: 0,
-//     server: {
-//       baseDir: './src',
-//       middleware: superstatic({ debug: false})
-//     }
-//   });
-// });
 
 gulp.task('default', ['clean-ts', 'compile-ts']);
