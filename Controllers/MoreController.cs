@@ -2,7 +2,7 @@
 
 namespace Web
 {
-    public class ReactNetController : Controller
+    public class MoreController : Controller
     {
         public IActionResult Index()
         {

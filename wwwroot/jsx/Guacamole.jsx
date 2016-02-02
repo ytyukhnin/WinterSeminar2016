@@ -22,7 +22,7 @@ const Example = React.createClass({
     return (
       <div style={{ height: 100, position: 'relative' }}>
         <Button ref="target" onClick={this.toggle}>
-          I am an Overlay target rendered sever-side using React.NET
+          I am rendered sever-side using React.NET
         </Button>
 
         <Overlay

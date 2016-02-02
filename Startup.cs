@@ -19,9 +19,9 @@ namespace Web
             app.UseDeveloperExceptionPage();
             app.UseMvcWithDefaultRoute();
 
-            //app.UseIISPlatformHandler();
-            //app.UseWelcomePage();
+            app.UseWelcomePage("/welcome");
             //app.UseRuntimeInfoPage("/info");
+            //app.UseIISPlatformHandler();
             
             // Initialise ReactJS.NET. Must be before static files.
             app.UseReact(config =>
