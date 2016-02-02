@@ -18,44 +18,57 @@ class App extends React.Component<IAppConfig, any> {
     constructor(props) {
         super(props);
         this.state = {
-                data: { }
+                deals: { }
             };
         this.handlePrevPage = this.handlePrevPage.bind(this);
         this.handleNextPage = this.handleNextPage.bind(this);
+        this.handleFirstPage = this.handleFirstPage.bind(this);
+        this.handleLastPage = this.handleLastPage.bind(this);
     } 
+    
+    private getDataForPage(rel:string) {
+        var collectionJson:ICollectionJson  = this.state.deals;
+        var link = _(collectionJson.collection.links).find( 
+            function(o) { return o.rel === rel; } );
+            
+        $.getJSON(link.href)
+            .done(resp => this.setState({ deals: resp }));
+    }
 
     componentWillMount() {
         $.getJSON(this.props.href)
-            .done(resp => this.setState({ data: resp }));
+            .done(resp => this.setState({ deals: resp }));
     }
 
     handlePrevPage(event, selectedEvent) {
-        var collectionJson:ICollectionJson  = this.state.data;
-        var link = _.find(collectionJson.collection.links, 
-            function(o) { return o.rel === "previous"; } );
-        $.getJSON(link.href)
-            .done(resp => this.setState({ data: resp }));
-        }
+        this.getDataForPage("previous");
+    }
 
     handleNextPage(event, selectedEvent) {
-        var collectionJson:ICollectionJson  = this.state.data;
-        var link = _.find(collectionJson.collection.links, 
-            function(o) { return o.rel === "next"; } );
-        $.getJSON(link.href)
-            .done(resp => this.setState({ data: resp }));      
-    }          
+        this.getDataForPage("next");     
+    }    
+    
+    handleFirstPage(event, selectedEvent) {
+        this.getDataForPage("first");
+    }
+
+    handleLastPage(event, selectedEvent) {
+        this.getDataForPage("last");     
+    }            
     
     render() {
         return (
             <div>
                 <CollectionJsonTable 
-                    collection = {this.state.data.collection}
+                    collection = {this.state.deals.collection}
                 />
                 
                 <Pager>
+                    <PageItem href="#" onSelect={this.handleFirstPage}>&larr; First</PageItem>
                     <PageItem href="#" onSelect={this.handlePrevPage}>Previous</PageItem>
                     {' '}
                     <PageItem href="#" onSelect={this.handleNextPage}>Next</PageItem>
+                    <PageItem href="#" onSelect={this.handleLastPage}>Last &rarr;</PageItem>
                 </Pager>                
             </div>
         )

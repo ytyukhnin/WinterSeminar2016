@@ -5,9 +5,10 @@ requirejs.config({
     paths : {
         "react": "../lib/react/react",
         "react-dom": "../lib/react/react-dom",
-        "jquery": "../lib/jquery/dist/jquery", // loaded with Bootstrap
+        "jquery": "../lib/jquery/dist/jquery", 
         "lodash": "../lib/lodash/dist/lodash",
-        "react-bootstrap": "../lib/react-bootstrap/react-bootstrap"
+        "react-bootstrap": "../lib/react-bootstrap/react-bootstrap",
+        "bootstrap": "../lib/bootstrap/dist/js/bootstrap.js"
     }
 });
 

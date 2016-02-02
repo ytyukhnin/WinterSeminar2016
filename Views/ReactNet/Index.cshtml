@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "React.NET - Winter Seminar 2016";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <p class="lead">Using React.NET server-side rendering</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10">
+        <div id="guacamole"></div>
+    </div>
+</div>
+
+<script src="https://fb.me/react-0.14.7.js"></script>
+<script src="https://fb.me/react-dom-0.14.7.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.28.2/react-bootstrap.min.js"></script>
+<script>
+  var Button = ReactBootstrap.Button;
+  var Overlay = ReactBootstrap.Overlay;
+</script>
+<script src="jsx/Guacamole.jsx"></script>
+
+<script>
+    (function() { 
+        $("#nav-react").addClass("active");
+    })();
+</script>
