@@ -19,13 +19,19 @@ namespace Web
             var deals = Enumerable
                             .Range(PAGE_SIZE * (page - 1), PAGE_SIZE)
                             .Select(idx => 
-                                new Deal("Deal " + idx, true, idx * 1000, idx * 100, idx * 1.4f, idx * 5.6f));
+                                new Deal(idx, "Deal " + idx, true, idx * 1000, idx * 100, idx * 1.4f, idx * 5.6f));
 
             // Collection+JSON => http://amundsen.com/media-types/collection/format/
             var doc = new ReadDocument
             {
                 Collection =
                 {
+                    Href = new Uri(Url.Action(new UrlActionContext 
+                        { 
+                            Action =  "Deals", 
+                            Controller = "Reports", 
+                            Protocol = Request.Scheme 
+                        })),
                     Version = "1.0"
                 }
             };
@@ -41,7 +47,14 @@ namespace Web
                                 new Data { Name = "actions", Prompt = "Auctions", Value = d.Auctions.ToString() },
                                 new Data { Name = "impressions", Prompt = "Impressions", Value = d.Impressions.ToString() },
                                 new Data { Name = "avgClearingCpm", Prompt = "Avg Clearing Cpm", Value = d.AvgClearingCpm.ToString() }
-                            }
+                            },
+                            Href = new Uri(Url.Action(new UrlActionContext 
+                            { 
+                                Action =  "Deals", 
+                                Controller = "Reports", 
+                                Values = new { id = d.DealID.ToString() },
+                                Protocol = Request.Scheme 
+                            }))
                         })
                     )
             {

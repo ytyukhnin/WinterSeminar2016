@@ -1,5 +1,6 @@
     public struct Deal 
     {
+        public int DealID;
         public string Name;
         public bool State;
         public int Auctions;
@@ -7,8 +8,9 @@
         public float Revenue;
         public float AvgClearingCpm;
 
-        public Deal(string name, bool state, int auctions, int impressions, float revenue, float avgClearingCpm) {
+        public Deal(int dealId, string name, bool state, int auctions, int impressions, float revenue, float avgClearingCpm) {
             Name = name;
+            DealID = dealId;
             State = state;
             Auctions = auctions;
             Impressions = impressions;
