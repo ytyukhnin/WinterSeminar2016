@@ -1,4 +1,8 @@
 == Winter Seminar 2016 Demo ==
+This demo was developped for a winter seminar 2016. 
+It uses ASP.NET 5 RC1, ReactJS, ReactJS.NET, TypeScript and Collection+JSON format for RESTful API.
+
+== Installation ==
 
 dnvm install -r clr 1.0.0-rc1-final 
 
